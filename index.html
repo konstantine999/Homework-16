@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="button-wrapper">
+            <button id="button">
+                SUBSCRIBE
+            </button>
+        </div>
+        <div id="image-wrapper">
+
+        </div>
+        <div id="user-list" class="users-wrapper">
+            
+        </div>
+    </div>
+    <script>
+        //1
+        const subscribeButton = document.getElementById('button')
+        subscribeButton.addEventListener('click', () => {
+            subscribeButton.remove()
+        })
+        //2
+        const imageWrapper = document.getElementById('image-wrapper')
+        const img = document.createElement('img')
+        img.setAttribute('src', 'https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg')
+        img.setAttribute('alt', 'Avatar')
+        imageWrapper.classList.add('image-wrapper')
+        imageWrapper.appendChild(img)
+
+        //3
+        let productData = [
+            {
+                product_id: 1,
+                amount: 200
+            },
+            {
+                product_id: 2,
+                amount: 300
+            },
+            {
+                product_id: 3,
+                amount: 500
+            }
+        ]
+        let sum = 0
+        const getSumOfproducts = (arr) => {
+            for (let i = 0; i < arr.length; i++)
+            sum = sum + arr[i].amount
+            return sum
+        }
+        console.log(getSumOfproducts(productData))
+
+        //4
+        let users = [
+            {
+                id: 7,
+                email: "michael.lawson@reqres.in",
+                first_name: "Michael",
+                last_name: "Lawson",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 8,
+                email: "lindsay.ferguson@reqres.in",
+                first_name: "Lindsay",
+                last_name: "Ferguson",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 9,
+                email: "tobias.funke@reqres.in",
+                first_name: "Tobias",
+                last_name: "Funke",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 10,
+                email: "byron.fields@reqres.in",
+                first_name: "Byron",
+                last_name: "Fields",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 11,
+                email: "george.edwards@reqres.in",
+                first_name: "George",
+                last_name: "Edwards",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            },
+            {
+                id: 12,
+                email: "rachel.howell@reqres.in",
+                first_name: "Rachel",
+                last_name: "Howell",
+                avatar: "https://i.ytimg.com/vi/VEx5hNYeZtY/hqdefault.jpg"
+            }
+        ]
+        const userList = document.getElementById('user-list')
+
+        const createElement = (first_name, last_name) => {
+            let card = document.createElement('div');
+            let imgWrapper = document.createElement('div')
+            let avatar = document.createElement('img');
+            let infoWrapper = document.createElement('div')
+            let firstName = document.createElement('span');
+            let lastName = document.createElement('span');
+            let logoWrapper = document.createElement('div')
+            let binLogo = document.createElement('img')
+            let infoLogo = document.createElement('img')
+            
+            card.classList.add('user-card')
+            imgWrapper.classList.add('avatar-wrapper')
+            infoWrapper.classList.add('info-wrapper')
+            logoWrapper.classList.add('logo-wrapper')
+
+
+            for (i = 0; i < 4; i++) {
+                avatar.setAttribute('src', (users[i].avatar));
+            }
+            for (i = 0; i < 4; i++) {
+                binLogo.setAttribute('src', './Logos/bin-logo.png');
+            }
+            for (i = 0; i < 4; i++) {
+                infoLogo.setAttribute('src', './Logos/info-logo.png');
+            }
+
+            for (i = 0; i < 4; i++) {
+                firstName.textContent = (first_name)
+                lastName.textContent = (last_name)
+            }
+
+            binLogo.addEventListener('click', () => {
+                card.remove()
+            })
+
+            userList.appendChild(card);
+            card.appendChild(imgWrapper)
+            card.appendChild(infoWrapper)
+            card.appendChild(logoWrapper)
+            logoWrapper.appendChild(binLogo)
+            logoWrapper.appendChild(infoLogo)
+            imgWrapper.appendChild(avatar);
+            infoWrapper.appendChild(firstName);
+            infoWrapper.appendChild(lastName);
+        }
+        for (let i = 0; i < 4; i++){
+            createElement(users[i].first_name, users[i].last_name)
+        }
+
+        //5 
+        const container = document.getElementById('container');
+
+        let formWrapper = document.createElement('div');
+        let button = document.createElement('button');
+        let form = document.createElement('form');
+        let input = document.createElement('input');
+        let paragraphWrapper = document.createElement('div')
+        let text = document.createElement('p')
+        let paragraph = document.createElement('p');
+        
+        formWrapper.classList.add('form-wrapper');
+        paragraphWrapper.classList.add('paragraph-wrapper')
+        paragraph.classList.add('text')
+        button.textContent = 'Send';
+        text.textContent = ('Your name is:')
+
+        input.setAttribute('type', 'text')
+        input.setAttribute('placeholder', 'Type your Name')
+
+        container.appendChild(formWrapper);
+        container.appendChild(paragraphWrapper)
+        formWrapper.appendChild(form);
+        form.appendChild(input);
+        form.appendChild(button);
+        paragraphWrapper.appendChild(text)
+        paragraphWrapper.appendChild(paragraph);
+
+        const getValue = () => {
+            paragraph.innerHTML = input.value
+            inputvalues = input.value
+            event.preventDefault();
+        }
+        button.addEventListener('click', getValue)
+
+        let items = [];
+        const addValuesToArray = () => {
+            inputvalues = input.value;
+            items.push(inputvalues);
+        }
+        button.addEventListener('click', addValuesToArray)
+        console.log(items)
+    </script>
+</body>
+</html>

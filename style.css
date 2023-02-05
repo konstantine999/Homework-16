@@ -1,0 +1,115 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(201, 201, 201);
+}
+.container {
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+}
+.button-wrapper  {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.button-wrapper button {
+    background-color: #FF0000;
+    color: white;
+    border: none;
+    padding: 12px 12px;
+    font: 18px;
+    border-radius: 8px;
+}
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.users-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+.user-card {
+    width: calc(25% - 30px);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 8px;
+}
+.img-wrapper {
+    width: 50%;
+    height: 50%;
+}
+.avatar-wrapper {
+    width: 70%;
+    height: 70%;
+    margin-top: 20px;
+}
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+.info-wrapper {
+    margin-top: 30px;
+}
+.info-wrapper span {
+    margin-left: 10px;
+    color: grey;
+    font-size: 18px;
+}
+.logo-wrapper {
+    width: 100%;
+    padding-top: 70px;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 25px;
+}
+.logo-wrapper img {
+    width: 10%;
+    cursor: pointer;
+}
+.form-wrapper {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    width: 200px;
+    height: 35px;
+    border-radius: 8px;
+    border: 1px solid blue;
+}
+.form-wrapper button {
+    padding: 7px 15px;
+    border: none;
+    background-color: blue;
+    color: white;
+    font-size: 18px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 8px;
+}
+.paragraph-wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+p {
+    font-size: 20px;
+    color: blue;
+}
+.text {
+    margin-left: 20px;
+}
+
